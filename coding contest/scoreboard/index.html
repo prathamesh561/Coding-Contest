@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Scoreboard</title>
+        <style >
+        *{
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+          }
+          
+          h1,footer{
+            width: 100%;
+            background-color: hsla(326, 92%, 28%, 0.2);
+            padding: 5%;
+            color: #000000;
+            text-align: center;
+          }
+          footer{
+            height: 50px;
+            font-size: large;
+          }
+          h4{
+            text-align: left;
+            color: #555555;
+          }
+          #myInput {
+            width: 80%;
+            font-size: 16px;
+            margin-left: 10%;
+            margin-right: 10%;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-top: auto;
+            margin-bottom: auto;
+          }
+          #myInput:hover {
+            border-color: #8a0651;
+            border-width: 1px;
+            background-color: #f1f1f1;
+          }
+          
+          #myTable {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+            border-style: groove;
+            border: 2px solid #bbb;
+            font-size: 18px;
+            background-color: #ffffff;
+          }
+          
+          #myTable th, #myTable td {
+            text-align: center;
+            padding: 12px;
+            text-decoration: none;
+            
+          }
+          
+          #myTable tr {
+            border-bottom: 1px solid #ddd;
+          }
+          
+          
+          #myTable tr.header, #myTable tr:hover{
+            background-color: #f1f1f1;
+          }
+          #myTable th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: center;
+            text-decoration: none;
+            background-color: hsl(326, 92%, 28%);
+            color: white;
+        }
+
+        a{
+            text-decoration: none;
+            color: #000000;
+        }
+        .header a{
+            color: white;
+        }
+        a:hover{
+            color: hsla(326, 92%, 28%, 1);
+        }
+        .header a:hover{
+            color: #000000;
+        }
+        </style>
+        
+    </head>
+    <body>
+        <h1 style="text-align: center;">Scoreboard</h1>
+        <h4> International Coding Contest    >   Scoreboard</h4>
+        <div data-app="true" class="v-application" id="app">
+            <div class="v-application--wrap">
+                <div>
+                    <main class="v-main" data-booted="true" style="padding: 0px;">
+                        <div class="v-main__wrap">
+                            <span data-v-08c51d12="">
+                                <span data-v-43100d77="" data-v-08c51d12="" class="ml-4">
+                                    <div data-v-43100d77="" class="container container--fluid" style="min-height: 100vh;">
+                                        <div data-v-43100d77="" class="row">
+                                            <div data-v-43100d77="" class="col-md-10 offset-sm-0 offset-md-1 col-12">
+                                                <div data-v-08c51d12="" data-v-43100d77="" class="row mt-5">
+                                                    <div data-v-08c51d12="" data-v-43100d77="" class="col">
+                                                        <div data-v-08c51d12="" class="v-card v-sheet " data-v-43100d77="">
+                                                            <div data-v-08c51d12="" class="px-2 v-card v-sheet v-sheet--outlined " style="height: 75px;">
+                                                                <div data-v-08c51d12="" class="row pt-2 no-gutters">
+                                                                    <div data-v-08c51d12="" class="mt-2 ml-2 col">
+                                                                        <span data-v-08c51d12="" class="v-tooltip v-tooltip--left">
+                                                                        </span>
+                                                                        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <!-- table starts here -->
+                                                            <div data-v-08c51d12="" class="v-data-table v-data-table--has-bottom teamDataTable" pagecount="4.4">
+                                                                <div class="v-data-table__wrapper">
+                                                                   
+                                                                        
+                                                                    <table id="myTable">
+                                                                        <colgroup>
+                                                                            <col class="">
+                                                                            <col class="">
+                                                                            <col class="">
+                                                                            <col class="">
+                                                                            <col class="">
+                                                                            <col class="">
+                                                                            <col class="">
+                                                                            <col class="">
+                                                                        </colgroup>
+                                                                        <thead class="v-data-table-header">
+                                                                            <tr class="header">
+                                                                                <th role="columnheader" scope="col" aria-label="Rank" class="text-left">
+                                                                                    <span onclick="SortTable(0)">Rank</span>
+                                                                                </th>
+                                                                                <th role="columnheader" scope="col" aria-label="Name" class="text-start">
+                                                                                    <span onclick="sortTable(1)">Names</span>
+                                                                                </th>
+                                                                                <th role="columnheader" scope="col" aria-label="Score" class="text-center table-header">
+                                                                                    <span>Score</span>
+                                                                                </th>
+                                                                                <th role="columnheader" scope="col" aria-label="A" class="text-start">
+                                                                                    <span data-v-08c51d12="" aria-haspopup="true" aria-expanded="false">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\problems\Problem A.html" class="problem_link d-flex justify-center mt-4 text-center"> A </a>
+                                                                                    </span>
+                                                                                    <span data-v-08c51d12="" class="v-tooltip v-tooltip--top">
+                                                                                    </span>
+                                                                                </th>
+                                                                                <th role="columnheader" scope="col" aria-label="B" class="text-start table-header">
+                                                                                    <span data-v-08c51d12="" aria-haspopup="true" aria-expanded="false">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\problems\Problem B.html" class="problem_link d-flex justify-center mt-4 text-center"> B </a>
+                                                                                    </span>
+                                                                                    <span data-v-08c51d12="" class="v-tooltip v-tooltip--top">
+                                                                                        <!---->
+                                                                                    </span>
+                                                                                </th>
+                                                                                <th role="columnheader" scope="col" aria-label="C" class="text-start">
+                                                                                    <span data-v-08c51d12="" aria-haspopup="true" aria-expanded="false">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\problems\Problem C.html" class="problem_link d-flex justify-center mt-4 text-center"> C </a>
+                                                                                    </span>
+                                                                                    <span data-v-08c51d12="" class="v-tooltip v-tooltip--top">
+                                                                                    </span>
+                                                                                </th>
+                                                                                <th role="columnheader" scope="col" aria-label="D" class="text-start table-header">
+                                                                                    <span data-v-08c51d12="" aria-haspopup="true" aria-expanded="false">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\problems\Problem D.html" class="problem_link d-flex justify-center mt-4 text-center"> D </a>
+                                                                                    </span>
+                                                                                    <span data-v-08c51d12="" class="v-tooltip v-tooltip--top">
+                                                                                    </span>
+                                                                                </th>
+                                                                                <th role="columnheader" scope="col" aria-label="E" class="text-start">
+                                                                                    <span data-v-08c51d12="" aria-haspopup="true" aria-expanded="false">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\problems\Problem E.html" class="problem_link d-flex justify-center mt-4 text-center"> E </a>
+                                                                                    </span>
+                                                                                    <span data-v-08c51d12="" class="v-tooltip v-tooltip--top">
+                                                                                    </span>
+                                                                                </th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr data-v-08c51d12="">
+                                                                                <td data-v-08c51d12="" class=""> 1 </td>
+                                                                                <td data-v-08c51d12="" class="">
+                                                                                    <a data-v-08c51d12="" class="text-decoration-none router_link"> Mark </a>
+                                                                                </td>
+                                                                                
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="font-weight-bold"> 5 </span>
+                                                                                        <br data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="grey--text">18:22:43</span>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Mark 1.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:47:18 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Mark 2.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:50:37 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Mark 3.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:51:52 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Mark 4.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Mark 5.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr data-v-08c51d12="">
+                                                                                <td data-v-08c51d12="" class=""> 2 </td>
+                                                                                <td data-v-08c51d12="" class="">
+                                                                                    <a data-v-08c51d12=""  class="text-decoration-none router_link"> Justin </a>
+                                                                                </td>
+                                                                                
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="font-weight-bold"> 5 </span>
+                                                                                        <br data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="grey--text">19:30:09</span>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Justin 1.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:46:44 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Justin 2.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:59:45 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Justin 3.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:51:31 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Justin 4.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:09 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Justin 5.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:58:09 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr data-v-08c51d12="">
+                                                                                <td data-v-08c51d12="" class=""> 3 </td>
+                                                                                <td data-v-08c51d12="" class="">
+                                                                                    <a data-v-08c51d12=""  class="text-decoration-none router_link"> Nova </a>
+                                                                                </td>
+                                                                                
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="font-weight-bold"> 5 </span>
+                                                                                        <br data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="grey--text">20:31:09</span>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Nova 1.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:44:26 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Nova 2.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:47:03 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Nova 3.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:58:34 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Nova 4.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 04:01:06 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Nova 5.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 04:10:06 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr data-v-08c51d12="">
+                                                                                <td data-v-08c51d12="" class=""> 4 </td>
+                                                                                <td data-v-08c51d12="" class="">
+                                                                                    <a data-v-08c51d12="" class="text-decoration-none router_link"> Adam </a>
+                                                                                </td>
+                                                                                
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="font-weight-bold"> 4 </span>
+                                                                                        <br data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="grey--text">28:22:43</span>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Adam 1.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:47:18 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Adam 2.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:50:37 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Adam 3.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:51:52 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Adam 4.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Adam 5.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 0 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 10:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr data-v-08c51d12="">
+                                                                                <td data-v-08c51d12="" class=""> 5 </td>
+                                                                                <td data-v-08c51d12="" class="">
+                                                                                    <a data-v-08c51d12="" class="text-decoration-none router_link"> Clair </a>
+                                                                                </td>
+                                                                                
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="font-weight-bold"> 4 </span>
+                                                                                        <br data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="grey--text">30:22:43</span>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Clair 1.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 0 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 13:47:18 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Clair 2.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:50:37 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Clair 3.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:51:52 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Clair 4.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Clair 5.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr data-v-08c51d12="">
+                                                                                <td data-v-08c51d12="" class=""> 6 </td>
+                                                                                <td data-v-08c51d12="" class="">
+                                                                                    <a data-v-08c51d12="" class="text-decoration-none router_link"> Blake </a>
+                                                                                </td>
+                                                                                
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="font-weight-bold"> 3 </span>
+                                                                                        <br data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="grey--text">18:22:43</span>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Blake 1.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:47:18 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Blake 2.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 0 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:50:37 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Blake 3.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:51:52 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Blake 4.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 0 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Blake 5.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                            <tr data-v-08c51d12="">
+                                                                                <td data-v-08c51d12="" class=""> 7 </td>
+                                                                                <td data-v-08c51d12="" class="">
+                                                                                    <a data-v-08c51d12="" class="text-decoration-none router_link"> Drake </a>
+                                                                                </td>
+                                                                                
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="font-weight-bold"> 3 </span>
+                                                                                        <br data-v-08c51d12="">
+                                                                                        <span data-v-08c51d12="" class="grey--text">28:22:43</span>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Drake 1.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 0 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:47:18 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Drake 2.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 08:50:37 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Drake 3.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 08:51:52 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Drake 4.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 1 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td data-v-08c51d12="" class="text-center">
+                                                                                    <span data-v-08c51d12="">
+                                                                                        <a data-v-08c51d12="" href="C:\Users\Admin\coding contest\submissions\Drake 5.html" class="text-decoration-none">
+                                                                                            <span data-v-08c51d12="" class="font-weight-bold green--text"> 0 </span>
+                                                                                            <br data-v-08c51d12="">
+                                                                                            <span data-v-08c51d12="" class="grey--text"> 03:52:56 </span>
+                                                                                        </a>
+                                                                                    </span>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </span>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+        <script>
+            function myFunction() {
+              var input, filter, table, tr, td, i, txtValue;
+              input = document.getElementById("myInput");
+              filter = input.value.toUpperCase();
+              table = document.getElementById("myTable");
+              tr = table.getElementsByTagName("tr");
+              for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                  txtValue = td.textContent || td.innerText;
+                  if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                  } else {
+                    tr[i].style.display = "none";
+                  }
+                }       
+              }
+            }
+            function sortTable(n) {
+                var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+                table = document.getElementById("myTable");
+                switching = true;
+              dir = "asc"; 
+             while (switching) {
+                switching = false;
+                rows = table.rows;
+                for (i = 1; i < (rows.length - 1); i++) {
+                  shouldSwitch = false;
+                  x = rows[i].getElementsByTagName("TD")[n];
+                  y = rows[i + 1].getElementsByTagName("TD")[n];
+                  if (dir == "asc") {
+                    if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+                      shouldSwitch= true;
+                      break;
+                    }
+                  } else if (dir == "desc") {
+                    if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+                  shouldSwitch = true;
+                  break;
+                }
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+              switchcount ++;      
+            } else {
+              if (switchcount == 0 && dir == "asc") {
+                dir = "desc";
+                switching = true;
+              }
+            }
+          }
+        }
+        function SortTable(n){
+            var table, rows, switching, i, x, y, shouldSwitch;
+            table = document.getElementById("myTable");
+            switching = true;
+          while (switching) {
+            switching = false;
+            rows = table.rows;
+           for (i = 1; i < (rows.length - 1); i++) {
+              shouldSwitch = false;
+              x = rows[i].getElementsByTagName("TD")[0];
+              y = rows[i + 1].getElementsByTagName("TD")[0];
+              if (Number(x.innerHTML) > Number(y.innerHTML)) {
+                shouldSwitch = true;
+                break;
+              }
+            }
+            if (shouldSwitch) {
+              rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+              switching = true;
+            }
+          }
+        }
+        </script> 
+        <footer><b><a href="mailto:pdevadiga2001.pd@gmail.com" class="text-decoration-none"><span class="title ma-4"> Contact Us </span></a></b></footer>   
+    </body>
+</html>
